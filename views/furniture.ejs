@@ -1,0 +1,38 @@
+<%- include('partials/_header.ejs') %>
+<%- include('partials/_navigator.ejs') %>
+      <!-- header section end -->
+      <!-- furnitures section start -->
+      <div class="furnitures_section">
+         <div class="container">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="hover01 column">
+                        <img src="/images/img-2.png">
+                     </div>
+                  </div>
+                  <div class="col-md-6 mt-3">
+                     <div class="">
+                        <h1 style="color: white;"><%= furniture.name %></h1>
+                        <p  style="color: white; margin: 30px 0 0 0;"><%= furniture.description %></p>
+                        
+                        <% if(userIN && !user.favourites.includes(furniture._id)) { %>
+                        <form method="POST" action="/furnitures/favourite">
+                           <input type="hidden" name="furniture_id" value="<%= furniture._id %>">
+                           <button class="seemore_bt" type="submit" style="margin: 30px 0 0 0; bottom: 0; padding: 20px; border-radius: 4rem; background-color: #f0b016; font-weight: bold; color: #fff; text-transform: uppercase;"><span>Add Favourite</span></button>
+                          </form>
+                          <% } %> 
+                          
+                          <% if(userIN && user.favourites.includes(furniture._id)) { %>
+                           <form method="POST" action="/furnitures/remove">
+                              <input type="hidden" name="furniture_id" value="<%= furniture._id %>">
+                              <button class="seemore_bt" type="submit" style="margin: 30px 0 0 0; bottom: 0; padding: 20px; border-radius: 4rem; background-color: #FF0000; font-weight: bold; color: #fff; text-transform: uppercase;"><span>Remove</span></button>
+                             </form>
+                           <% } %>
+                        </div>
+                        </div>
+               </div>
+         </div>
+      </div>
+      <!-- furnitures section end -->
+      <!-- footer section start -->
+      <%- include('partials/_footer.ejs') %>

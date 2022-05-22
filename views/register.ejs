@@ -1,0 +1,44 @@
+<%- include('partials/_header.ejs') %>
+<%- include('partials/_navigator.ejs') %>
+      <!-- header section end -->
+      <!-- contact section start -->
+      <div class="contact_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="contact_taital contact_heading">Register</h1>
+               </div>
+            </div>
+            <div class="contact_section_2">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="mail_section map_form_container">
+                        <form method="POST" action="/users/signup" novalidate>
+                            <input type="text" class="mail_text" placeholder="Name" name="name">
+                            <input type="text" class="mail_text" placeholder="Email" name="email">
+                            <select name="role" class="form-select mail_text">
+                                <option value="customer">Customer</option>
+                                <option value="dealer">Dealer</option>
+                              </select>
+                           <input type="password" class="mail_text" placeholder="Password" name="password">
+                           <div class="col-md-4 offset btn_main">
+                              <div class="send_bt"><button type="submit" value="REGISTER" id="submit">Sign Up</button></div>
+                           </div>
+                        </form>
+                        <div class="map_main map_container">
+                           <div class="map-responsive">
+                              <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="368" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                              <div class="btn_main">
+                                 <div class="map_bt d-flex justify-content-center w-100 map_center"><a href="#" id="showForm">Form</a></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- contact section end -->
+      <!-- footer section start -->
+      <%- include('partials/_footer.ejs') %>
